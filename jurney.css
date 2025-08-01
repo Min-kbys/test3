@@ -1,0 +1,802 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Kiwi Maru', serif;
+    background-color: #F9F3E5;
+    color:rgb(51, 51, 51);
+}
+
+/*---------------------------------
+observer
+----------------------------------*/
+.title{
+    opacity:0;
+    transform-origin:center center;
+    transform:scaleX(0);
+    transition:opacity 1s,transform 1s;
+}
+.title.active{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/*----*/
+.about img,
+.fukidashi-content,
+.message-contents,
+.support,
+.message-btn{
+    opacity:0;
+    transition: opacity 0.8s;
+}
+
+.about img.active,
+.fukidashi-content.active,
+.message-contents.active,
+.support.active,
+.message-btn.active{
+    opacity:1;
+}
+
+/*-----*/
+.about-content,
+.jurney,
+.voice img,
+.confort-content{
+    opacity:0;
+    transform: scale(0.8);
+    transition: opacity 0.8s,transform 0.8s;
+}
+.about-content.active,
+.jurney.active,
+.voice img.active,
+.confort-content.active{
+    opacity: 1;
+    transform: scale(1);
+}
+/*-----*/
+.voice-content{
+    opacity:0;
+    transform: translateY(-100%);
+    transition: opacity 1s,transform 1s;
+}
+.voice-content.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*-------------------------------------
+header
+--------------------------------------*/
+.header{
+    position: relative;
+}
+.background{
+    width:900px;
+    height:90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1.3s ease-in-out;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+
+    top:15px;
+    right:0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow:20px 14px 30px black;
+}
+.bg1{
+    background-image: url("./jurney-images/top1.jpg");
+}
+.bg2{
+    background-image: url("./jurney-images/top2.jpg");
+}
+.bg3{
+    background-image: url("./jurney-images/top3.jpg");
+}
+.bg4{
+    background-image: url("./jurney-images/top4.jpg");
+}
+
+/*------*/
+.header-content p{
+    font-size: 35px;
+    text-shadow: 3px 3px 3px white;
+    padding:15px 0;
+}
+.header-content .p1{
+    margin-left:150px
+}
+.header-content .p2{
+    margin-left:200px
+}
+.header-content .p3{
+    margin-left:350px
+}
+
+/*-----*/
+.header-top{
+    margin:0 100px 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width:180px;
+    height: auto;
+}
+.header .logo{
+    margin-top:-30px;
+}
+
+.menu-icon{
+    width:40px;
+    height:26px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+.menu-icon span{
+    position: absolute;
+    width: 100%;
+    height:2.5px;
+    background:white;
+    box-shadow: 2px 2px 2px rgb(51, 51, 51,0.8);
+    transition: 0.5s ease;
+}
+.menu-icon span:nth-child(1){
+    top:0;
+}
+.menu-icon span:nth-child(2){
+    top:12px;
+}
+.menu-icon span:nth-child(3){
+    top:24px
+}
+/*------------------------------------
+menu
+--------------------------------------*/
+.menu-icon.active span:nth-child(1){
+    transform: rotate(225deg);
+    top:25px;
+    background-color: #333;
+    box-shadow: none;
+}
+
+.menu-icon.active span:nth-child(2),
+.menu-icon.active span:nth-child(3){
+    transform: rotate(-225deg);
+    top:25px;
+    background-color: #333;
+    box-shadow: none;
+}
+
+.menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:50%;
+    background-color: #EDE6DB;
+    color: #333;
+    z-index: 5;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition:transform 0.7s ease;
+
+    font-size:20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.menu a{
+    padding-bottom:15px;
+    color: #333;
+    text-decoration-line: none;
+    letter-spacing: 3px;
+}
+.menu.active{
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/*--------------------------------------
+about
+----------------------------------------*/
+.about{
+    text-align: center;
+    padding:150px 0 100px 0;
+    background-image: url(Jurney.images/about-background.jpg);
+    background-size: cover;   
+    position: relative;
+    margin-top:250px;
+}
+.a-background{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
+}
+.about-wrapper{
+    position: relative;
+    z-index: 1;
+}
+/*-----*/
+.title{
+    text-align: center;
+    margin-bottom:15px;
+}
+.title h2{
+    font-size:35px;
+    margin-bottom:5px;
+    position: relative;
+}
+.title h2::before,
+.title h2::after{
+    content: "";
+    position: absolute;
+    top:60%;
+    height:2px;
+    width:160px;
+    background-color: rgb(51, 51, 51,0.8);
+}
+.title h2::before{
+    left:30%;
+}
+.title h2::after{
+    left:58%;
+}
+
+/*-----*/
+.about img{
+    margin-top:20px;
+}
+.about-content p{
+    
+    margin-bottom:40px;
+    font-size:17px;
+}
+.p-last p{
+    font-weight: 500;
+    font-size:20px;
+    padding-top:40px;
+    text-shadow: 2px 2px 2px rgb(51, 51, 51,0.4);
+}
+
+/*----------------------------------------
+jurney
+-----------------------------------------*/
+.jurneys{
+    margin:150px 0;
+}
+.jurneys-wrapper{
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.jurney{
+    position: relative;
+}
+.jurney-img{
+    width:350px;
+    height: 350px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+.jurney-img:hover{
+    opacity:0.6;
+}
+.jurney p{
+    font-size:30px;
+    position: absolute;
+    text-shadow: 4px 3px 4px white;
+    font-weight: 600;
+    border-bottom:2px solid rgb(91, 86, 86);
+    cursor: pointer;
+}
+.jurney .p1{
+    top:65%;
+    left:20%;
+}
+.jurney .p2{
+    top:75%;
+    left:26%;
+}
+.foot{
+    width:200px;
+    height: auto;
+    transform: rotate(-25deg);
+}
+.jurney2{
+    margin-left:auto;
+    margin-right:0;
+    position: relative;
+}
+.foot2{
+    position: absolute;
+    transform: scaleX(-1) rotate(-25deg);
+    bottom:-20%;
+    left:-60%;
+}
+.jurney1{
+    position: relative;
+}
+.foot1{
+    position: absolute;
+    bottom:-30%;
+    right:35%;
+}
+
+/*----------------------------------------
+overlay
+------------------------------------------*/
+button {
+  background: none;   /* 背景をなくす */
+  border: none;       /* 枠線をなくす */
+  padding: 0;         /* 余白もなくす */
+  margin: 0; 
+}
+.overlay{
+    display: none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.overlay.show{
+    display: flex;
+    opacity:1;
+}
+.overlay.fadeout{
+    opacity: 0;
+}
+
+.hidden-box{
+    background: #EDE6DB;
+    width:750px;
+    height:460px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: scaleY(0);
+    transition: transform 0.5s ease,opacity 0.5s ease;
+    transform-origin: center center;
+    position: relative;
+}
+.overlay.show .hidden-box{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.close-btn{
+    position: absolute;
+    top:15px;
+    right:10px;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 101;
+    background: none;
+    border: none;
+}
+.line{
+    display: block;
+    position: absolute;
+    width:30px;
+    height:3px;
+    background: #333;
+    top:50%;
+    left:0;
+    transition: opacity 0.4s ease;
+    transform: translateY(-50%);
+}
+.line1{
+    transform: rotate(45deg);
+}
+.line2{
+    transform: rotate(-45deg);
+    opacity: 1;
+}
+.Jurney-content{
+    display: none;
+}
+.Jurney-content.active{
+    display: block;
+}
+
+
+.Jurney-content-wrapper{
+    display: flex;
+    gap:30px;
+}
+
+.left-top img{
+    width:350px;
+    height: 250px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin:20px 0;
+}
+.left-bottom img{
+    width:35px;
+    height: auto;
+}
+.left-bottom-place,
+.left-bottom-hotel{
+    display: flex;
+    gap:30px;
+    align-items: center;
+    margin:0 0 20px 80px;
+    font-weight: bold;
+}
+
+.J-title{
+    margin:35px 0 10px 0;
+}
+.J-title .marker{
+    font-size: 35px;
+    display: inline;
+    background: linear-gradient(transparent 70%,rgb(255,255,255,0.5) 40%);
+}
+.J-title .p2{
+    margin:15px 0 ;
+}
+.time{
+    margin-bottom: 20px;
+}
+.time .p3{
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.time .p4{
+    position: relative;
+    display: inline-block;
+    margin-left:40px;
+}
+.time-bg{
+    position: absolute;
+    top:-10px;
+    left:-10px;
+    width:270px;
+    height:45px;
+    z-index: -1;
+}
+.green{
+    background: #D4DED5;
+}
+.blue{
+    background: #DEE4F9;
+}
+
+.J-btn{
+  width: 150px;
+  height: 45px;
+  border: 3px solid hsl(227, 39%, 66%);
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  margin: 0 auto;
+  position: relative;
+}
+.J-btn a{
+    text-decoration-line: none;
+    color:#333;
+    position: absolute;
+    top:13%;
+    left:28%;
+}
+
+.J-btn:hover {
+  background: hsl(227, 39%, 66%);
+  color: white;
+}
+
+/*---------------------------------
+voice
+-----------------------------------*/
+.voice{
+    margin-bottom: 100px;
+}
+.voices-wrapper{
+    display: flex;
+    justify-content: center;
+    gap:80px;
+    text-align: center;
+}
+.voice img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.voice-content{
+    width:300px;
+    height:230px;
+    background-color: white;
+    border-radius: 20px;
+    margin:15px 0 ;
+}
+.voice-content p{
+    font-size:15px;
+    width:250px;
+    margin:0 auto;
+    padding-bottom: 15px;
+}
+.human {
+    padding:25px 0 ;
+}
+
+/*-------------------------
+comfort
+--------------------------*/
+.fukidashi{
+    display: flex;
+    justify-content: center;
+    gap:250px;
+}
+.fukidashi-content{
+    display: flex;
+    align-items: center;
+    gap:10px;
+
+    border: #333 solid 1px;
+    border-radius: 50%;
+    padding: 15px 25px ;
+    position: relative;
+    margin:30px 0;
+}
+
+.icon{
+    width:30px;
+    height: auto;
+}
+.tail-right,
+.tail-left{
+    position: absolute;
+    width:100px;
+    height: auto;
+}
+.tail-left{
+    right: -30px;
+    bottom:-55px;
+}
+.tail-right{
+    transform:scaleX(-1);
+    left: -30px;
+    bottom:-57px;
+}
+
+.confort-content{
+    text-align: center;
+    max-width: 250px;
+    margin: auto;
+    padding:90px 0 100px 0;
+    position: relative;
+}
+.confort-content p{
+    margin-bottom:30px;
+}
+.confort-content img{
+    position: absolute;
+    top:0px ;
+    left:-18px;
+    width:290px;
+}
+
+.support{
+    margin: 0 auto;
+    max-width:450px;
+    position: relative;
+}
+.support-wrapper{
+    background-color: white;
+    border-radius: 20%;
+    padding:50px 40px;
+}
+.support-wrapper p{
+    text-align: center;
+}
+.support img{
+    position: absolute;
+    top:-23px;
+    left:48%;
+    width:55px;
+    height: auto;
+}
+.support .p2{
+    margin:20px 0 40px 0 ;
+}
+.support li{
+    font-size: 20px;
+    list-style: none;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+.support li::before{
+    position: absolute;
+    content: "・";
+    top:-63px;
+    left:-40px;
+    font-size:100px;
+    color:#74BB41;
+}
+
+/*-------------------------------------
+message
+-------------------------------------*/
+
+.message{
+    text-align: center;
+    font-size:19px;
+    padding:120px 0 100px 0;
+    background-image: url("Jurney.images/confort-background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top:80px;
+}
+.message p{
+    padding-bottom: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+}
+.m-background{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 0;
+}
+.message a{
+    display: inline-block;
+    text-align: center;
+    text-decoration-line: none;
+    color:white;
+    background-color: 50985B;
+    padding:30px 20px;
+    margin-top:50px;
+    position: relative;
+    z-index: 10;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 1px 1px 0.5px rgb(91, 86, 86);
+}
+
+.message-btn {
+  font-size: 17px;
+  padding: 1em 2.7em;
+  font-weight: 500;
+  background: #1f2937;
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
+  cursor: pointer;
+  margin-top:50px;
+  display: inline-block;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+  margin-top: -0.25em;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.label {
+  position: relative;
+  top: -1px;
+}
+
+.transition {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 500ms;
+  background-color: rgba(16, 185, 129, 0.6);
+  border-radius: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.message-btn:hover .transition {
+  width: 100%;
+  height: 100%;
+}
+
+.message-btn:active {
+  transform: scale(1);
+}
+
+/*----------------------------------
+footer
+----------------------------------*/
+
+.footer{
+    background-color: #B9B2A4;
+}
+.footer-wrapper{
+    width:850px;
+    margin: 0 auto;
+    height:100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer img{
+    width:300px;
+    height: auto;
+}
+.footer-title h2::before{
+    left:-5%;
+    width:100px;
+}
+.footer-title h2::after{
+    left:80%;
+    width: 100px;
+}
+.footer li span{
+    font-weight: bold;
+}
+.footer li{
+    list-style: none;
+    padding-bottom: 15px;
+}
+.footer-title{
+    text-align: center;
+    margin-bottom:15px;
+}
+.footer-title h2{
+    font-size:27px;
+    margin-bottom:5px;
+    position: relative;
+}
+.footer-title h2::before,
+.footer-title h2::after{
+    content: "";
+    position: absolute;
+    top:60%;
+    height:2px;
+    background-color: rgb(51, 51, 51,0.8);
+}
+
+
