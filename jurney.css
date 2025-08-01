@@ -216,7 +216,7 @@ about
 .about{
     text-align: center;
     padding:150px 0 100px 0;
-    background-image: url(Jurney.images/about-background.jpg);
+    background-image: url("./jurney-images/about-background.jpg");
     background-size: cover;   
     position: relative;
     margin-top:250px;
@@ -654,7 +654,7 @@ message
     text-align: center;
     font-size:19px;
     padding:120px 0 100px 0;
-    background-image: url("Jurney.images/confort-background.jpg");
+    background-image: url("./jurney-images/confort-background.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
